@@ -1,0 +1,71 @@
+Problem with Props system is when we have multi level transfers. ( Easy to implement)
+Solution : Context system ( Problem : Confusing to implement)
+
+Context system is to move info, not for state management. We use useState for state management
+
+We cannot render array of objects in <Text> directly, we should use <Flatlist>
+
+useReducer used when we need multiple useStates ( its altrenative, we can also use useState too but to much to handel)
+
+---
+
+DEPRECATIONS:
+
+return {
+headerRight: () => (
+<TouchableOpacity onPress={() => navigation.navigate('Create')}>
+<Feather name="plus" size={30} />
+</TouchableOpacity>
+),
+};
+
+return {
+headerRight: () => (
+<TouchableOpacity onPress={() => navigation.navigate('Edit')}>
+<EvilIcons name="pencil" size={35} />
+</TouchableOpacity>
+),
+};
+
+---
+
+FOR JSON SERVER :
+
+in the root directory
+
+> > npm init
+> > Click enter enter enter
+> > NEw json file created
+> > npm install json-server ngrok
+
+In the JSON server folder \_ Run the below to start the json server. Post no can be changed in script.json
+(now its running on port 3000)
+
+> > npm run db
+
+To run RGROK
+
+//Dont run the below it doesnt use the auth. token
+
+> > npm run tunnel
+
+This shows the url of our json server that can be access publically by other devices. Even though json server runs on out local network, we cant access it. NGROK helps in this where it redirects to the required application. Our device -> NGROK -> server
+
+//Run from the ngrok cmd in Study Resources / Udemy/React native/
+
+> > ngrok http 3000
+
+---
+
+Every proj :
+
+> > npm start
+> > npm db
+> > ngrok http PORT_NO
+> > PORT_NO is where >>npm db is running i.e 3000 in our example
+
+---
+
+FOR API REQUEST :
+
+> > npm intsall axios
